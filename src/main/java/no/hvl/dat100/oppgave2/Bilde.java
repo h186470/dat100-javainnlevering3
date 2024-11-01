@@ -28,7 +28,7 @@ public class Bilde extends Tekst {
 	@Override
 	public String toString() {
 		//Kan ikke bruke super ettersom test feiler pga toString i Tekst
-		return "BILDE\n" + getId() + "\n" + getBruker() + "\n" + getDato() + "\n" + getLikes() + "\n" + getTekst() + "\n" + url + "\n";
+		return "BILDE\n" + getId() + "\n" + getBruker() + "\n" + getDato() + "\n" + getLikes() + "\n" + getTekst() + "\n" + url;
 
 	}
 
