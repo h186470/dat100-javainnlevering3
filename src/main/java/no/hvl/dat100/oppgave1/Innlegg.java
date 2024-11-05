@@ -5,66 +5,74 @@ import no.hvl.dat100.common.TODO;
 public abstract class Innlegg {
 	
 	// TODO - deklarering av objektvariable
+	protected int id;
+	protected String bruker;
+	protected String dato;
+	protected int likes;
 	
 	public Innlegg() {
 		
 	}
 	
 	public Innlegg(int id, String bruker, String dato) {
-
-		// TODO 
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		this.id = id;
+		this.bruker = bruker;
+		this.dato = dato;
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
-
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		this.id = id;
+		this.bruker = bruker;
+		this.dato = dato;
+		this.likes = likes;
 	}
 	
 	public String getBruker() {
-		
-		throw new UnsupportedOperationException(TODO.method());
-
+		return this.bruker;
 	}
 
 	public void setBruker(String bruker) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.bruker = bruker;
 	}
 
 	public String getDato() {
-		throw new UnsupportedOperationException(TODO.method());
-		
+		return this.dato;
 	}
 
 	public void setDato(String dato) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.dato = dato;
 	}
 
 	public int getId() {
-		throw new UnsupportedOperationException(TODO.method());
+		return this.id;
 
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getLikes() {
-		throw new UnsupportedOperationException(TODO.method());
-
+		return this.likes;
+	}
+	
+	public void setLikes(int likes) {
+		this.likes = likes;
 	}
 	
 	public void doLike () {
-		throw new UnsupportedOperationException(TODO.method());
+		this.likes++;
 	}
 	
 	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
-
+		if (this.id == innlegg.id) {
+			return true;
+		} else {return false;}
 	}
 	
 	@Override
 	public String toString() {
-		
-		throw new UnsupportedOperationException(TODO.method());
+		return this.id + "\n" + this.bruker + "\n" + this.dato + "\n" + this.likes +"\n";
 				
 	}
 	
