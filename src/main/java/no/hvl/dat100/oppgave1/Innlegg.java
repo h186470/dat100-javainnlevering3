@@ -23,7 +23,7 @@ public abstract class Innlegg {
 		this.id = id;
 		this.bruker = bruker;
 		this.dato = dato;
-		this.likes = likes;
+		this.likes = 0;
 	}
 	
 	public String getBruker() {
@@ -71,7 +71,7 @@ public abstract class Innlegg {
 	
 	@Override
 	public String toString() {
-		return this.id + "\n" + this.bruker + "\n" + this.dato + "\n" + this.likes;
+		return this.id + "\n" + this.bruker + "\n" + this.dato + "\n" + this.likes + "\n";
 				
 	}
 	
