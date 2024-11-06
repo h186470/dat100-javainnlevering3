@@ -71,7 +71,7 @@ public abstract class Innlegg {
 	
 	@Override
 	public String toString() {
-		return this.id + "\n" + this.bruker + "\n" + this.dato + "\n" + this.likes +"\n";
+		return this.id + "\n" + this.bruker + "\n" + this.dato + "\n" + this.likes;
 				
 	}
 	
