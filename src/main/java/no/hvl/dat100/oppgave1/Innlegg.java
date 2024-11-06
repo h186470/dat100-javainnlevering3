@@ -3,34 +3,31 @@ package no.hvl.dat100.oppgave1;
 import no.hvl.dat100.common.TODO;
 
 public abstract class Innlegg {
-	 	private int id;
-	    private String bruker;
-	    private String dato;
-	    private int likes;
+	// TODO - deklarering av objektvariable
+	protected int id;
+	protected String bruker;
+	protected String dato;
+	protected int likes;
 	
 	public Innlegg() {
 		
 	}
 	
 	public Innlegg(int id, String bruker, String dato) {
-
 		this.id = id;
-        this.bruker = bruker;
-        this.dato = dato;
-        this.likes = 0;
+		this.bruker = bruker;
+		this.dato = dato;
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
-
 		this.id = id;
-        this.bruker = bruker;
-        this.dato = dato;
-        this.likes = likes;
+		this.bruker = bruker;
+		this.dato = dato;
+		this.likes = likes;
 	}
 	
 	public String getBruker() {
 		return this.bruker;
-
 	}
 
 	public void setBruker(String bruker) {
@@ -38,8 +35,7 @@ public abstract class Innlegg {
 	}
 
 	public String getDato() {
-		return this.dato;	
-		
+		return this.dato;
 	}
 
 	public void setDato(String dato) {
@@ -50,29 +46,32 @@ public abstract class Innlegg {
 		return this.id;
 
 	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public int getLikes() {
 		return this.likes;
-
+	}
+	
+	public void setLikes(int likes) {
+		this.likes = likes;
 	}
 	
 	public void doLike () {
-		this.likes ++;
+		this.likes++;
 	}
 	
 	public boolean erLik(Innlegg innlegg) {
-		if(innlegg.id == this.id) {
+		if (this.id == innlegg.id) {
 			return true;
-		} else {
-			return false;
-		}
-
+		} else {return false;}
 	}
 	
 	@Override
 	public String toString() {
-		
-		return id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n";
+		return this.id + "\n" + this.bruker + "\n" + this.dato + "\n" + this.likes;
 				
 	}
 	

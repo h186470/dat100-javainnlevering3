@@ -5,72 +5,85 @@ import no.hvl.dat100.oppgave1.*;
 
 public class Blogg {
 
-	private Innlegg[] innleggtabell;
-	private int nesteLedig;
+
+	Innlegg[] innleggstabell;
+	private int nesteledig;
 
 	public Blogg() {
-		innleggtabell = new Innlegg[20];
-		nesteLedig = 0;
+		this.innleggstabell = new Innlegg[20];
+		nesteledig = 0;
 	}
 
 	public Blogg(int lengde) {
-		innleggtabell = new Innlegg[lengde];
-		nesteLedig = 0;
+		this.innleggstabell = new Innlegg[lengde];
+		nesteledig = 0;
 	}
 
 	public int getAntall() {
-		return nesteLedig;
+		return this.nesteledig;
 	}
 
 	public Innlegg[] getSamling() {
-		return this.innleggtabell;
+		return this.innleggstabell;
 
 	}
 
 	public int finnInnlegg(Innlegg innlegg) {
-		for (int i = 0; i < nesteLedig; i++) {
-			if (innleggtabell[i].erLik(innlegg)) {
-				return i;
+
+		boolean funnet = false;
+		int pos = -1;
+		int indeks = 0;
+		while (!funnet && indeks<this.nesteledig) {
+			if (innleggstabell[indeks].getId()==innlegg.getId()) {
+				funnet = true;
+				pos = indeks;
+			} else {
+				indeks++;
 			}
 		}
-		return -1;
+		return pos;
 	}
 
 	public boolean finnes(Innlegg innlegg) {
-		if (finnInnlegg(innlegg) != -1) {
-			return true;
-		}
-		;
 
+		int indeks = 0;
+		while (indeks<this.nesteledig) {
+			if (innleggstabell[indeks].getId()==innlegg.getId()) {
+				return true;
+			} else {
+				indeks++;
+			}
+		}
 		return false;
 	}
 
 	public boolean ledigPlass() {
-		if (nesteLedig < innleggtabell.length) {
+		if(this.nesteledig<this.innleggstabell.length) {
 			return true;
 		}
-		;
 		return false;
 
 	}
 
 	public boolean leggTil(Innlegg innlegg) {
-
-		if (!finnes(innlegg) && ledigPlass()) {
-			innleggtabell[nesteLedig] = innlegg;
-			nesteLedig++;
-			return true;
+		boolean innlagt = false;
+		boolean ny =finnInnlegg(innlegg) == -1;
+		if (ny && this.ledigPlass()) {
+			innleggstabell[nesteledig]=innlegg;
+			nesteledig++;
+			innlagt = true;
 		}
-		return false;
+
+		return innlagt;
 	}
 
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-        sb.append(nesteLedig).append("\n");
-        for (int i = 0; i < nesteLedig; i++) {
-            sb.append(innleggtabell[i].toString()).append("\n");
-        }
-        return sb.toString();
+		String utskrift = this.getAntall()+"\n";
+		for (int i = 0; i<nesteledig; i++) {
+			utskrift += innleggstabell[i].toString() + "\n";
+		}
+		return utskrift;
+
 	}
 
 	// valgfrie oppgaver nedenfor

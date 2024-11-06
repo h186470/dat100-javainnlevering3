@@ -5,13 +5,14 @@ import no.hvl.dat100.oppgave1.*;
 
 public class Tekst extends Innlegg {
 
-	private String tekst;
+	String tekst;
 	
 	public Tekst () {
 	}
 	
 	public Tekst(int id, String bruker, String dato, String tekst) {
 		super(id, bruker, dato);
+
 		this.tekst = tekst;
 	}
 	
@@ -31,7 +32,8 @@ public class Tekst extends Innlegg {
 
 	@Override
 	public String toString() {
-		return "TEKST" + "\n" + super.toString() + tekst;
+		String utskrift = "TEKST\n" + super.toString() + "\n" + this.tekst;
+		return utskrift;
 
 	}
 	

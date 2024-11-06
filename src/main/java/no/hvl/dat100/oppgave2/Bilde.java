@@ -4,10 +4,10 @@ import no.hvl.dat100.common.TODO;
 
 public class Bilde extends Tekst {
 
-	private String url;
+	String url;
 	
 	public Bilde(int id, String bruker, String dato, String tekst, String url) {
-		super(id, bruker, dato, tekst);
+		super(id,bruker,dato,tekst);
 		this.url = url;
 	}
 
@@ -22,13 +22,15 @@ public class Bilde extends Tekst {
 	}
 
 	public void setUrl(String url) {
-		this.url = url;
+
+		this.url = url;;
 	}
 
 	@Override
 	public String toString() {
-		//Kan ikke bruke super ettersom test feiler pga toString i Tekst
-		return "BILDE\n" + getId() + "\n" + getBruker() + "\n" + getDato() + "\n" + getLikes() + "\n" + getTekst() + "\n" + url;
+
+		String utskrift = "BILDE\n" + this.id + "\n" + this.bruker + "\n" + this.dato + "\n" + this.likes + "\n" +this.tekst + "\n" + this.url;
+		return utskrift;
 
 	}
 
