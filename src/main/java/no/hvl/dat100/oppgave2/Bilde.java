@@ -12,7 +12,7 @@ public class Bilde extends Tekst {
 	}
 
 	public Bilde(int id, String bruker, String dato, int likes, String tekst, String url) {
-		super(id,bruker,dato,likes,tekst);
+		super(id, bruker, dato, likes, tekst);
 		this.url = url;
 	}
 	
@@ -22,11 +22,13 @@ public class Bilde extends Tekst {
 	}
 
 	public void setUrl(String url) {
+
 		this.url = url;;
 	}
 
 	@Override
 	public String toString() {
+
 		String utskrift = "BILDE\n" + this.id + "\n" + this.bruker + "\n" + this.dato + "\n" + this.likes + "\n" +this.tekst + "\n" + this.url + "\n";
 		return utskrift;
 

@@ -5,6 +5,7 @@ import no.hvl.dat100.oppgave1.*;
 
 public class Blogg {
 
+
 	Innlegg[] innleggstabell;
 	private int nesteledig;
 
@@ -28,6 +29,7 @@ public class Blogg {
 	}
 
 	public int finnInnlegg(Innlegg innlegg) {
+
 		boolean funnet = false;
 		int pos = -1;
 		int indeks = 0;
@@ -60,6 +62,7 @@ public class Blogg {
 			return true;
 		}
 		return false;
+
 	}
 
 	public boolean leggTil(Innlegg innlegg) {
@@ -80,6 +83,7 @@ public class Blogg {
 			utskrift += innleggstabell[i].toString() + "\n";
 		}
 		return utskrift;
+
 	}
 
 	// valgfrie oppgaver nedenfor

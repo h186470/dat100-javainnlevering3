@@ -3,7 +3,6 @@ package no.hvl.dat100.oppgave1;
 import no.hvl.dat100.common.TODO;
 
 public abstract class Innlegg {
-	
 	// TODO - deklarering av objektvariable
 	protected int id;
 	protected String bruker;
