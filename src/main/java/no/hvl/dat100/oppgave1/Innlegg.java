@@ -17,13 +17,14 @@ public abstract class Innlegg {
 		this.id = id;
 		this.bruker = bruker;
 		this.dato = dato;
+		this.likes = 0;
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
 		this.id = id;
 		this.bruker = bruker;
 		this.dato = dato;
-		this.likes = 0;
+		this.likes = likes;
 	}
 	
 	public String getBruker() {
