@@ -29,7 +29,7 @@ public class Bilde extends Tekst {
 	@Override
 	public String toString() {
 
-		String utskrift = "BILDE\n" + this.id + "\n" + this.bruker + "\n" + this.dato + "\n" + this.likes + "\n" +this.tekst + "\n" + this.url;
+		String utskrift = "BILDE\n" + this.id + "\n" + this.bruker + "\n" + this.dato + "\n" + this.likes + "\n" +this.tekst + "\n" + this.url + "\n";
 		return utskrift;
 
 	}
