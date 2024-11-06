@@ -22,6 +22,7 @@ public class SkrivBlogg {
 		}
 		finally {
 			skriver.close();
+			status = true;
 			return status;
 		}
 	}
